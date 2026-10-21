@@ -25,21 +25,21 @@ export function Navigation({ activeSection, onOpenResume }: NavigationProps) {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 px-6 sm:px-12 lg:px-20 ${
           scrolled
-            ? "py-4 bg-[#f5f0e6]/95 backdrop-blur-md border-b border-[#1d4872]/10"
+            ? "py-4 bg-[#f5f0e6]/95 backdrop-blur-md border-b border-[#1d4872]/10 shadow-sm"
             : "py-7 bg-transparent border-b border-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           
-          {/* Left: Brand Monogram / Wordmark (matching template BLOOM style) */}
+          {/* Left: Brand Monogram SG (as requested) */}
           <a
             href="#home"
-            className="font-sans text-xl sm:text-2xl font-extrabold tracking-[0.2em] uppercase text-[#1d4872]"
+            className="font-sans text-2xl sm:text-3xl font-black tracking-[0.2em] uppercase text-[#1d4872]"
           >
-            GANGULY
+            SG
           </a>
 
-          {/* Center: Navigation Links with Coral Orange Active Dot (as in screenshot) */}
+          {/* Center: Navigation Links with Coral Orange Active Dot */}
           <nav className="hidden md:flex items-center space-x-9 font-sans text-xs tracking-[0.16em] uppercase">
             {navItems.map((item) => {
               const id = item.href.replace("#", "");
@@ -50,7 +50,7 @@ export function Navigation({ activeSection, onOpenResume }: NavigationProps) {
                   href={item.href}
                   className={`flex flex-col items-center py-1 transition-colors duration-150 ${
                     isActive
-                      ? "text-[#1d4872] font-semibold"
+                      ? "text-[#1d4872] font-bold"
                       : "text-[#5c7083] hover:text-[#1d4872]"
                   }`}
                 >
@@ -69,12 +69,12 @@ export function Navigation({ activeSection, onOpenResume }: NavigationProps) {
           <div className="flex items-center space-x-5">
             <button
               onClick={onOpenResume}
-              className="hidden sm:inline-flex items-center font-sans text-xs font-semibold tracking-wider uppercase text-[#1d4872] border border-[#1d4872]/20 hover:border-[#f97d58] hover:bg-[#f97d58] hover:text-white px-4 py-2 rounded-full transition-colors duration-150"
+              className="hidden sm:inline-flex items-center font-sans text-xs font-bold tracking-wider uppercase text-[#1d4872] border border-[#1d4872]/20 hover:border-[#f97d58] hover:bg-[#f97d58] hover:text-white px-4 py-2 rounded-full transition-colors duration-150"
             >
               Resume
             </button>
 
-            {/* Hamburger Button (≡) matching template */}
+            {/* Hamburger Button (≡) */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="p-1 flex flex-col gap-1.5 focus:outline-none"
@@ -118,7 +118,7 @@ export function Navigation({ activeSection, onOpenResume }: NavigationProps) {
               key={item.href}
               href={item.href}
               onClick={() => setMobileOpen(false)}
-              className="text-sm font-sans tracking-[0.16em] uppercase text-[#1d4872] font-semibold hover:text-[#f97d58] transition-colors"
+              className="text-sm font-sans tracking-[0.16em] uppercase text-[#1d4872] font-bold hover:text-[#f97d58] transition-colors"
             >
               {item.label}
             </a>
@@ -129,7 +129,7 @@ export function Navigation({ activeSection, onOpenResume }: NavigationProps) {
                 setMobileOpen(false);
                 onOpenResume();
               }}
-              className="w-full py-2.5 text-xs font-sans tracking-wider uppercase text-white bg-[#1d4872] hover:bg-[#f97d58] rounded-full transition-colors"
+              className="w-full py-2.5 text-xs font-sans tracking-wider uppercase text-white bg-[#1d4872] hover:bg-[#f97d58] rounded-full font-bold transition-colors"
             >
               Resume (PDF)
             </button>
