@@ -53,7 +53,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#101217] text-[#f8fafc] relative">
+    <div className="min-h-screen bg-[#f5f0e6] text-[#1d4872] relative">
       <Navigation
         activeSection={activeSection}
         onOpenResume={() => setIsResumeOpen(true)}
@@ -62,8 +62,8 @@ export default function Home() {
       <main className="relative z-10">
         <HeroSection onOpenResume={() => setIsResumeOpen(true)} />
         <AboutSection />
-        <SkillsSection />
         <ProjectsSection />
+        <SkillsSection />
         <CredentialsSection />
         <AchievementsSection />
         <ContactSection onOpenResume={() => setIsResumeOpen(true)} />

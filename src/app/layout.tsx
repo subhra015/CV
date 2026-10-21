@@ -32,8 +32,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className="bg-[#0e0f14] text-[#f8fafc] antialiased selection:bg-[#ff2844] selection:text-white relative">
+    <html lang="en">
+      <body className="bg-[#f5f0e6] text-[#1d4872] antialiased selection:bg-[#f97d58] selection:text-white relative">
         <CustomCursor />
         {children}
       </body>

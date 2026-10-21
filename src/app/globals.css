@@ -1,46 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-charcoal-950: #0a0b0e;
-  --color-charcoal-900: #101217;
-  --color-charcoal-850: #161820;
-  --color-charcoal-800: #1c1e27;
-  --color-charcoal-700: #242732;
+  --color-ivory-50: #ffffff;
+  --color-ivory-100: #faf7f0;
+  --color-ivory-200: #f5f0e6;
+  --color-ivory-300: #ede6d8;
+  --color-ivory-400: #ded4c0;
   
-  --color-silver-white: #ffffff;
-  --color-silver-bright: #e8ecf4;
-  --color-silver-mid: #b0b8c8;
-  --color-silver-muted: #758092;
+  --color-editorial-blue: #1d4872;
+  --color-editorial-blue-dark: #143555;
+  --color-editorial-blue-light: #2c6499;
+  --color-editorial-blue-muted: #5c7083;
   
-  --color-signal-red: #ff2844;
-  --color-signal-bright: #ff4760;
-  --color-signal-deep: #b81429;
+  --color-coral: #f97d58;
+  --color-coral-dark: #e6643c;
+  --color-coral-light: #ff9170;
   
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
 
 :root {
-  --bg-deep: #0a0b0e;
-  --bg-base: #101217;
-  --bg-card: #161820;
-  --text-primary: #f8fafc;
-  --text-muted: #94a3b8;
-  --accent-red: #ff2844;
+  --bg-canvas: #f5f0e6;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #ede6d8;
+  --text-blue: #1d4872;
+  --text-muted: #5c7083;
+  --accent-coral: #f97d58;
+  --border-line: rgba(29, 72, 114, 0.15);
+  --border-line-strong: rgba(29, 72, 114, 0.3);
 }
 
 html {
-  background-color: #101217;
-  color: #f8fafc;
+  background-color: #f5f0e6;
+  color: #1d4872;
   font-family: 'Plus Jakarta Sans', sans-serif;
   scroll-behavior: auto;
 }
 
 body {
-  background-color: #101217;
-  color: #f8fafc;
+  background-color: #f5f0e6;
+  color: #1d4872;
   min-height: 100vh;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
@@ -48,7 +49,7 @@ body {
 }
 
 ::selection {
-  background: #ff2844;
+  background: #f97d58;
   color: #ffffff;
 }
 
@@ -56,12 +57,23 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0b0e;
+  background: #f5f0e6;
 }
 ::-webkit-scrollbar-thumb {
-  background: #242732;
+  background: #ded4c0;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff2844;
+  background: #f97d58;
+}
+
+/* 3-Tier Outlined Typography Effect from Template */
+.text-outline-blue {
+  color: transparent;
+  -webkit-text-stroke: 2px #1d4872;
+}
+@media (max-width: 640px) {
+  .text-outline-blue {
+    -webkit-text-stroke: 1.5px #1d4872;
+  }
 }

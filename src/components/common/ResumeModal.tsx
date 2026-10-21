@@ -28,28 +28,28 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+      className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-4xl bg-[#161820] border border-white/10 rounded-2xl overflow-hidden flex flex-col max-h-[90vh]"
+        className="relative w-full max-w-4xl bg-white border border-[#1d4872]/20 rounded-2xl overflow-hidden flex flex-col max-h-[90vh] shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-[#101217]">
-          <h3 className="font-sans text-xs tracking-wider uppercase text-white font-medium">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-[#1d4872]/15 bg-[#f5f0e6]">
+          <h3 className="font-sans text-xs tracking-wider uppercase text-[#1d4872] font-bold">
             Curriculum Vitae: Subhrajeet Ganguly
           </h3>
           <div className="flex items-center space-x-3">
             <a
               href="/resume.pdf"
               download
-              className="px-4 py-1.5 text-xs font-sans uppercase tracking-wider text-white bg-[#ff2844] hover:bg-[#ff4760] rounded-full transition-colors"
+              className="px-4 py-1.5 text-xs font-sans uppercase tracking-wider text-white font-bold bg-[#1d4872] hover:bg-[#f97d58] rounded-full transition-colors"
             >
               Download PDF
             </a>
             <button
               onClick={onClose}
-              className="text-gray-400 hover:text-white text-xs font-sans px-2 py-1"
+              className="text-[#5c7083] hover:text-[#1d4872] text-xs font-sans px-2 py-1 uppercase tracking-wider font-semibold"
               aria-label="Close modal"
             >
               Close
@@ -57,10 +57,10 @@ export function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
           </div>
         </div>
 
-        <div className="flex-1 overflow-auto p-4 bg-[#0a0b0e] min-h-[500px]">
+        <div className="flex-1 overflow-auto p-4 bg-[#ede6d8] min-h-[500px]">
           <iframe
             src="/resume.pdf"
-            className="w-full h-full min-h-[600px] border-none rounded-lg"
+            className="w-full h-full min-h-[600px] border-none rounded-xl"
             title="Subhrajeet Ganguly Resume"
           />
         </div>

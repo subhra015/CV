@@ -23,16 +23,24 @@ export function Navigation({ activeSection, onOpenResume }: NavigationProps) {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 sm:px-12 lg:px-20 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 px-6 sm:px-12 lg:px-20 ${
           scrolled
-            ? "py-4 bg-[#101217]/95 backdrop-blur-md border-b border-white/10"
-            : "py-6 bg-transparent border-b border-transparent"
+            ? "py-4 bg-[#f5f0e6]/95 backdrop-blur-md border-b border-[#1d4872]/10"
+            : "py-7 bg-transparent border-b border-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           
-          {/* Left: Minimalist Navigation Links (matching reference) */}
-          <nav className="hidden md:flex items-center space-x-8 font-sans text-sm tracking-normal">
+          {/* Left: Brand Monogram / Wordmark (matching template BLOOM style) */}
+          <a
+            href="#home"
+            className="font-sans text-xl sm:text-2xl font-extrabold tracking-[0.2em] uppercase text-[#1d4872]"
+          >
+            GANGULY
+          </a>
+
+          {/* Center: Navigation Links with Coral Orange Active Dot (as in screenshot) */}
+          <nav className="hidden md:flex items-center space-x-9 font-sans text-xs tracking-[0.16em] uppercase">
             {navItems.map((item) => {
               const id = item.href.replace("#", "");
               const isActive = activeSection === id;
@@ -40,57 +48,50 @@ export function Navigation({ activeSection, onOpenResume }: NavigationProps) {
                 <a
                   key={item.href}
                   href={item.href}
-                  className={`relative py-1 transition-colors duration-150 ${
+                  className={`flex flex-col items-center py-1 transition-colors duration-150 ${
                     isActive
-                      ? "text-white font-medium"
-                      : "text-[#94a3b8] hover:text-white"
+                      ? "text-[#1d4872] font-semibold"
+                      : "text-[#5c7083] hover:text-[#1d4872]"
                   }`}
                 >
                   <span>{item.label}</span>
-                  {isActive && (
-                    <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#e2e8f0]" />
+                  {isActive ? (
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#f97d58] mt-1" />
+                  ) : (
+                    <span className="w-1.5 h-1.5 mt-1" />
                   )}
                 </a>
               );
             })}
           </nav>
 
-          {/* Center: Brand Monogram */}
-          <a
-            href="#home"
-            className="font-serif text-2xl tracking-widest text-[#f8fafc] font-normal flex items-baseline gap-1"
-          >
-            <span>SG</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#ff2844] inline-block" />
-          </a>
-
-          {/* Right: Resume CTA and Hamburger Menu */}
+          {/* Right: Resume Action and 3-line Hamburger Menu */}
           <div className="flex items-center space-x-5">
             <button
               onClick={onOpenResume}
-              className="hidden sm:inline-flex items-center font-sans text-xs tracking-wider uppercase text-[#e2e8f0] border border-white/20 hover:border-[#ff2844] px-4 py-2 rounded-full bg-transparent hover:bg-[#ff2844] hover:text-white transition-colors duration-150"
+              className="hidden sm:inline-flex items-center font-sans text-xs font-semibold tracking-wider uppercase text-[#1d4872] border border-[#1d4872]/20 hover:border-[#f97d58] hover:bg-[#f97d58] hover:text-white px-4 py-2 rounded-full transition-colors duration-150"
             >
               Resume
             </button>
 
-            {/* Hamburger Button */}
+            {/* Hamburger Button (≡) matching template */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="p-1.5 flex flex-col gap-1.5 focus:outline-none"
+              className="p-1 flex flex-col gap-1.5 focus:outline-none"
               aria-label="Toggle navigation menu"
             >
               <span
-                className={`w-6 h-[1.5px] bg-white transition-all duration-200 ${
+                className={`w-6 h-[2px] bg-[#1d4872] transition-all duration-200 ${
                   mobileOpen ? "translate-y-2 rotate-45" : ""
                 }`}
               />
               <span
-                className={`w-6 h-[1.5px] bg-white transition-all duration-200 ${
+                className={`w-6 h-[2px] bg-[#1d4872] transition-all duration-200 ${
                   mobileOpen ? "opacity-0" : ""
                 }`}
               />
               <span
-                className={`w-6 h-[1.5px] bg-white transition-all duration-200 ${
+                className={`w-6 h-[2px] bg-[#1d4872] transition-all duration-200 ${
                   mobileOpen ? "-translate-y-2 -rotate-45" : ""
                 }`}
               />
@@ -99,15 +100,15 @@ export function Navigation({ activeSection, onOpenResume }: NavigationProps) {
         </div>
       </header>
 
-      {/* Drawer */}
+      {/* Mobile Drawer */}
       <div
-        className={`fixed inset-0 z-40 bg-black/60 backdrop-blur-sm transition-opacity duration-200 md:hidden ${
+        className={`fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity duration-200 md:hidden ${
           mobileOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setMobileOpen(false)}
       >
         <div
-          className={`absolute top-0 right-0 w-[80vw] max-w-xs h-full bg-[#101217] border-l border-white/10 p-8 pt-24 flex flex-col gap-6 transition-transform duration-200 ${
+          className={`absolute top-0 right-0 w-[80vw] max-w-xs h-full bg-[#f5f0e6] border-l border-[#1d4872]/15 p-8 pt-24 flex flex-col gap-6 transition-transform duration-200 ${
             mobileOpen ? "translate-x-0" : "translate-x-full"
           }`}
           onClick={(e) => e.stopPropagation()}
@@ -117,18 +118,18 @@ export function Navigation({ activeSection, onOpenResume }: NavigationProps) {
               key={item.href}
               href={item.href}
               onClick={() => setMobileOpen(false)}
-              className="text-base font-sans text-[#cbd5e1] hover:text-white transition-colors"
+              className="text-sm font-sans tracking-[0.16em] uppercase text-[#1d4872] font-semibold hover:text-[#f97d58] transition-colors"
             >
               {item.label}
             </a>
           ))}
-          <div className="pt-6 border-t border-white/10">
+          <div className="pt-6 border-t border-[#1d4872]/15">
             <button
               onClick={() => {
                 setMobileOpen(false);
                 onOpenResume();
               }}
-              className="w-full py-2.5 text-xs font-sans tracking-wider uppercase text-white bg-[#ff2844] hover:bg-[#ff4760] rounded-full transition-colors"
+              className="w-full py-2.5 text-xs font-sans tracking-wider uppercase text-white bg-[#1d4872] hover:bg-[#f97d58] rounded-full transition-colors"
             >
               Resume (PDF)
             </button>

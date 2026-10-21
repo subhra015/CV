@@ -57,11 +57,11 @@ export function CustomCursor() {
     <>
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 w-1.5 h-1.5 rounded-full bg-white pointer-events-none z-[9999] hidden"
+        className="fixed top-0 left-0 w-1.5 h-1.5 rounded-full bg-[#f97d58] pointer-events-none z-[9999] hidden"
       />
       <div
         ref={ringRef}
-        className="fixed top-0 left-0 w-[34px] h-[34px] rounded-full border border-[#ff2844]/60 pointer-events-none z-[9999] hidden transition-[width,height,border-color] duration-150 ease-out [&.cursor-hover]:w-[50px] [&.cursor-hover]:h-[50px] [&.cursor-hover]:border-[#ff2844]"
+        className="fixed top-0 left-0 w-[34px] h-[34px] rounded-full border border-[#1d4872]/40 pointer-events-none z-[9999] hidden transition-[width,height,border-color] duration-150 ease-out [&.cursor-hover]:w-[50px] [&.cursor-hover]:h-[50px] [&.cursor-hover]:border-[#f97d58]"
       />
     </>
   );
