@@ -10,8 +10,8 @@ export function HeroSection({ onOpenResume }: HeroSectionProps) {
       id="home"
       className="relative min-h-screen flex items-center pt-28 pb-16 px-6 sm:px-12 lg:px-20 overflow-hidden bg-[#f5f0e6]"
     >
-      {/* Right-aligned Botanical Artwork - matching Image 2 reference */}
-      <div className="absolute right-0 top-0 bottom-0 w-full md:w-[52%] lg:w-[48%] pointer-events-none select-none overflow-hidden z-0 opacity-20 md:opacity-100">
+      {/* Whole Background Asset - Uncut */}
+      <div className="absolute inset-0 z-0 pointer-events-none select-none">
         <img
           src="/hero_art.jpg"
           alt="Coral botanical floral artwork over deep blue and warm ivory background"
@@ -85,20 +85,6 @@ export function HeroSection({ onOpenResume }: HeroSectionProps) {
             </a>
           </div>
 
-        </div>
-
-        {/* Right Overlay Accents from Template (Integrated on the right floral section) */}
-        <div className="absolute top-1/2 right-4 lg:right-12 -translate-y-1/2 hidden md:flex items-center space-x-3 pointer-events-none select-none">
-          <span className="w-[2px] h-10 bg-white/60" />
-          <span className="font-sans text-[11px] tracking-[0.24em] uppercase text-white font-bold max-w-[110px] leading-tight drop-shadow-sm">
-            APPLIED DEEP LEARNING
-          </span>
-        </div>
-
-        {/* Bottom Right Counter & Slider Pill from Template */}
-        <div className="absolute bottom-4 right-4 sm:right-10 flex items-center space-x-3 font-sans text-xs tracking-widest text-[#1d4872] font-bold bg-[#f5f0e6] px-4 py-2 rounded-full border border-[#1d4872]/20 shadow-sm pointer-events-none select-none">
-          <span>01 / 06</span>
-          <span className="w-8 h-[2px] bg-[#f97d58]" />
         </div>
 
       </div>
